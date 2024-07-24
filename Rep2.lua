@@ -7,7 +7,7 @@ local factionVars = {}
 
 local cwhite, cyellow, corange, cresume = "|cffffffff","|cffffff78","|cffff7831","|r"
 local fmt = string.format
-local getfactioninfo = GetFactionInfo
+local getfactioninfo = C_Reputation.GetFactionDataByIndex
 local math_abs = math.abs
 local math_ceil = math.ceil
 local standingmax = 8
@@ -19,8 +19,8 @@ f:RegisterEvent("UPDATE_FACTION")
 
 
 local function ScanFaction()
-if (GetNumFactions() == 0) then DEFAULT_CHAT_FRAME:AddMessage("Factions not yet available") end
-	for i = 1, GetNumFactions() do
+if (C_Reputation.GetNumFactions() == 0) then DEFAULT_CHAT_FRAME:AddMessage("Factions not yet available") end
+	for i = 1, C_Reputation.GetNumFactions() do
 	local name, _, standingID, _, _, barValue, _, _, isHeader, _, hasRep = getfactioninfo(i)
 	if ((not isHeader or hasRep) and name) then
 			factionVars[name] = {}
@@ -33,7 +33,7 @@ if (GetNumFactions() == 0) then DEFAULT_CHAT_FRAME:AddMessage("Factions not yet 
 end
 
 local function Report()
-local tempfactions = GetNumFactions()
+local tempfactions = C_Reputation.GetNumFactions()
 if (tempfactions ~= 0 and init == 0) then 
 	ScanFaction()
 	init = 1
@@ -44,7 +44,7 @@ if (tempfactions > factions) then
 	ScanFaction()
 	factions = tempfactions
 	end
-	for factionIndex = 1, GetNumFactions() do
+	for factionIndex = 1, C_Reputation.GetNumFactions() do
 		local name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep = getfactioninfo(factionIndex)
 
 		if (not isHeader or hasRep) and factionVars[name] then
