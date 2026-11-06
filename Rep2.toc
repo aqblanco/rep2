@@ -1,10 +1,10 @@
-## Interface: 110000
-## X-Curse-Packaged-Version: 11.0
-## X-Curse-Project-Name: Rep2-TWW
-## X-Curse-Project-ID: rep2-tww
+## Interface: 120105, 120100, 50504, 20506, 16001, 11509
+## X-Curse-Packaged-Version: 12.1.5
+## X-Curse-Project-Name: Rep2 Continued
+## X-Curse-Project-ID: rep2-continued
 
-## Title: Rep2 TWW
+## Title: Rep2 Continued
 ## Notes:  Rep2 displays a message, which shows how much reputation you gained, and how much is needed until the next standing.
-## Author: Nirek. TWW and further by Hiro88
+## Author: Nirek, continued by Hiro88
 
 Rep2.lua
